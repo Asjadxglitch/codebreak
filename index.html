@@ -530,6 +530,23 @@
   .delay-3 { transition-delay: 0.3s; }
   .delay-4 { transition-delay: 0.4s; }
 
+  /* HERO HEADLINE SPIN (PowerPoint-style) */
+  @keyframes heroSpinIn {
+    0%   { opacity: 0; transform: rotate(360deg) scale(0.4); }
+    60%  { opacity: 1; transform: rotate(-8deg)  scale(1.05); }
+    80%  { transform: rotate(4deg)  scale(0.98); }
+    100% { opacity: 1; transform: rotate(0deg)   scale(1); }
+  }
+  .hero-bounce-1,
+  .hero-bounce-2 {
+    display: inline-block;
+    opacity: 0;
+    transform-origin: center center;
+    animation: heroSpinIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .hero-bounce-1 { animation-delay: 0.3s; }
+  .hero-bounce-2 { animation-delay: 0.85s; }
+
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .nav-links { display: none; }
@@ -574,7 +591,10 @@
   </div>
   <div class="hero-content fade-up">
     <div class="hero-badge"><span class="dot"></span> Social Media Advertising Agency</div>
-    <h1>Stop Blending In.<br><span class="accent-text">Start Breaking Through.</span></h1>
+    <h1>
+      <span class="hero-bounce-1">Stop Blending In.</span><br>
+      <span class="accent-text hero-bounce-2">Start Breaking Through.</span>
+    </h1>
     <p class="hero-sub">We build unforgettable brands, run high-converting ad campaigns, and scale revenue for businesses that refuse to be average.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary">Book a Free Strategy Call →</a>
